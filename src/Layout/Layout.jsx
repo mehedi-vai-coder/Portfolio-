@@ -8,6 +8,7 @@ import Education from '../Components/Education/Education';
 import Contact from '../Components/Contact/Contact';
 import Footer from '../Components/Footer/Footer';
 import Blur from '../Blur';
+import ContactMeMain from '../Components/contactMeSection/ContactMeMain';
 
 const Layout = () => {
     return (
@@ -24,6 +25,7 @@ const Layout = () => {
                 <Work></Work>
                 <Experience></Experience>
                 <Education></Education>
+                {/* <ContactMeMain></ContactMeMain> */}
                 <Contact></Contact>
                 <Footer></Footer>
             </div>
