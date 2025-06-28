@@ -11,7 +11,7 @@ import Blur from '../Blur';
 
 const Layout = () => {
     return (
-        <div className='bg-[#050414]'>
+        <div className=' bg-[#050414]'>
 
             <Blur position={{ top: '35%', left: '20%' }} size={{ width: '30%', height: '40%' }}></Blur>
 
@@ -21,8 +21,8 @@ const Layout = () => {
                 <Navbar></Navbar>
                 <About></About>
                 <Skills></Skills>
-                <Experience></Experience>
                 <Work></Work>
+                <Experience></Experience>
                 <Education></Education>
                 <Contact></Contact>
                 <Footer></Footer>
