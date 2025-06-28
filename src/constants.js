@@ -34,12 +34,12 @@ import webverseLogo from './assets/company_logo/webverse_logo.png';
 import newtonschoolLogo from './assets/company_logo/newtonschool_logo.png';
 
 // Education Section Logo's
-import bsaLogo from './assets/education_logo/bsa_logo.png';
-import vpsLogo from './assets/education_logo/vps_logo.png';
+import UIU from './assets/education_logo/United_International_University_Monogram.svg.png';
+import Academy from './assets/education_logo/images.png';
 
 // Project Section Logo's
-import githubdetLogo from './assets/work_logo/Bookshelf.png';
-import csprepLogo from './assets/work_logo/recipe.png';
+import Bookshelf from './assets/work_logo/Bookshelf.png';
+import RecipeImage from './assets/work_logo/recipe.png';
 import movierecLogo from './assets/work_logo/movie_rec.png';
 
 
@@ -139,21 +139,20 @@ export const education = [
 
   {
     id: 0,
-    img: bsaLogo,
-    school: "BSA College, Mathura",
-    date: "Sept 2018 - Aug 2021",
-    grade: "73.2%",
-    desc: "I completed my Bachelor's degree in Computer Science (B.Sc.) from BSA College, Mathura. Throughout my studies, I was immersed in a variety of subjects that deepened my understanding of computing and technology. From exploring Data Structures and Algorithms to diving into Web Development and Database Management Systems, I gained practical insights into the world of software development. My time at BSA College allowed me to work on projects that applied theoretical concepts to real-world problems.",
+    img: UIU,
+    school: "United International University",
+    date: "Sept 2024 - Present",
+    desc: "🎓 I am currently studying Computer Science & Engineering at United International University (UIU) from 2024 to present, focusing on modern software development, algorithms, system design, and practical projects that strengthen my problem-solving skills while preparing to contribute effectively to the tech industry through continuous learning and hands-on practice.",
     degree: "Bachelor of Science - BSC (Computer Science)",
   },
   {
     id: 1,
-    img: vpsLogo,
-    school: "Vatsalya Public School Govardhan, Mathura",
-    date: "Apr 2017 - March 2018",
-    grade: "78%",
-    desc: "I completed my class 12 education from Vatsalya Public School, Govardhan, under the CBSE board, where I studied Physics, Chemistry, and Mathematics (PCM) with Computer Science.",
-    degree: "CBSE(XII) - PCM with Computer Science",
+    img: Academy,
+    school: "Government Mujib College",
+    date: "Apr 2020 - March 2021",
+    grade: "95%",
+    desc: "I completed my class 12 education from Government Mujib COllege, Noakhali, under the Cumilla board, where I studied Physics, Chemistry, and Mathematics (PCM) with Computer Science.",
+    degree: "HSC",
   },
 
 ];
@@ -164,7 +163,7 @@ export const projects = [
     title: "📚 Virtual Bookshelf",
     description:
       "A powerful and user-friendly React.js application designed Virtual Bookshelf is a modern web application that lets users explore, add, update, and delete books with a beautifully designed UI. It includes authentication, protected routes, and user-specific features.",
-    image: githubdetLogo,
+    image: Bookshelf,
     tags: ["HTML", "CSS", "JavaScript", "React JS", "API"],
     github: "https://github.com/mehedi-vai-coder/BookShelf-Client",
     webapp: "https://bookshelf-3935e.web.app/",
@@ -174,7 +173,7 @@ export const projects = [
     title: "🍽️ Recipe World",
     description:
       "Recipe Auth is a full-stack recipe management application that allows users to browse, add, edit, and manage their favorite recipes securely with authentication and authorization flows. Secure registration & login system to manage personal recipe collections.Fast and reliable hosting with integrated authentication and database.",
-    image: csprepLogo,
+    image: RecipeImage,
     tags: ["React JS", "Node.js", "MongoDB", "Express", "HTML", "CSS", "JavaScript"],
     github: "https://github.com/mehedi-vai-coder/Recipe-Client-Side",
     webapp: "https://recipe-auth-328a6.web.app/",
