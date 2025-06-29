@@ -1,12 +1,36 @@
-# React + Vite
+# Mehedi Hasan — Portfolio Website 🌐
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal developer portfolio!  
+This website showcases my skills, featured projects, and my journey as a passionate Frontend Developer, currently exploring the world of Backend Development.
 
-Currently, two official plugins are available:
+## 🚀 Live Preview
+🔗 [Visit Website](https://portfolio-mehedi-hasan-51.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Built With
+- **React.js** ⚛️  
+- **Tailwind CSS** 💨  
+- **Framer Motion** 🎞️  
+- **Vite** ⚡  
 
-## Expanding the ESLint configuration
+## 📂 Features
+- Fully responsive modern design  
+- Smooth scroll and animated transitions  
+- About Me, Skills, Projects, and Contact sections  
+- Clean UI with fast performance  
+- Hosted on Vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 👨‍💻 About Me
+I’m **Mehedi Hasan**, a frontend enthusiast aiming to become a full-stack developer.  
+I love building beautiful UIs, learning new technologies, and sharing knowledge with the dev community.
+
+## 📧 Contact Me
+- Email: `md.mehedihasan27bd@gmail.com`  
+- Facebook: [Mehedi Hasan](https://www.facebook.com/md.mehedihasan0008/)  
+- LinkedIn: (Add if available)  
+- GitHub: [Your GitHub Profile](https://github.com/your-username)
+
+---
+
+> 💡 Feel free to fork this repo or get inspired to build your own stunning portfolio!
+
+ 
