@@ -1,17 +1,43 @@
-import React, { useState } from "react";
+// src/components/Contact/ContactForm.jsx
+
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
 
-const Contact = () => {
-    const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+const ContactForm = () => {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [success, setSuccess] = useState("");
 
-    const handleChange = (e) =>
-        setFormData({ ...formData, [e.target.name]: e.target.value });
+    const form = useRef();
 
-    const handleSubmit = (e) => {
+    const sendEmail = (e) => {
         e.preventDefault();
-        console.log(formData);
-        // integrate EmailJS, Formspree, or server API here
+        emailjs
+            .sendForm(
+                "service_k8536aj",
+                "template_qna4wud",
+                form.current,
+                {
+                    publicKey: "xpanEglOTAdZWpr3w",
+                }
+            )
+            .then(
+                () => {
+                    setName("");
+                    setEmail("");
+                    setMessage("");
+                    setSuccess("✅ Message Sent Successfully!");
+                    setTimeout(() => setSuccess(""), 4000);
+                },
+                (error) => {
+                    console.error("FAILED...", error.text);
+                    setSuccess("❌ Failed to send message. Please try again.");
+                    setTimeout(() => setSuccess(""), 4000);
+                }
+            );
     };
 
     return (
@@ -36,7 +62,6 @@ const Contact = () => {
                 </p>
             </div>
 
-            {/* Contact Form */}
             <Tilt
                 tiltMaxAngleX={10}
                 tiltMaxAngleY={10}
@@ -47,76 +72,63 @@ const Contact = () => {
                 className="relative z-10"
             >
                 <motion.form
+                    ref={form}
+                    onSubmit={sendEmail}
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6 }}
-                    onSubmit={handleSubmit}
                     className="bg-gradient-to-br from-[#1f2937] to-[#0f172a] border border-purple-700/40 rounded-2xl p-6 sm:p-10 shadow-[0_0_40px_rgba(130,69,236,0.15)] backdrop-blur-md hover:shadow-[0_0_60px_rgba(130,69,236,0.3)] transition duration-500 max-w-2xl mx-auto"
                 >
-                    <div className="mb-6">
-                        <label htmlFor="name" className="block text-gray-300 font-semibold mb-2">
-                            Name
-                        </label>
+                    {success && (
+                        <p className="text-center mb-4 font-medium text-green-500">
+                            {success}
+                        </p>
+                    )}
+                    <div className="flex flex-col gap-5">
                         <input
                             type="text"
-                            id="name"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            required
-                            className="w-full p-3 rounded-lg bg-[#0f172a]/50 border border-purple-700/20 text-gray-200 placeholder-gray-500 focus:outline-none focus:border-purple-500 transition"
+                            name="from_name"
                             placeholder="Your Name"
+                            required
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            className="h-12 rounded-lg bg-[#0f172a]/50 border border-purple-700/20 text-gray-200 placeholder-gray-500 px-4 focus:outline-none focus:border-purple-500 transition"
                         />
-                    </div>
-
-                    <div className="mb-6">
-                        <label htmlFor="email" className="block text-gray-300 font-semibold mb-2">
-                            Email
-                        </label>
                         <input
                             type="email"
-                            id="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
+                            name="from_email"
+                            placeholder="Your Email"
                             required
-                            className="w-full p-3 rounded-lg bg-[#0f172a]/50 border border-purple-700/20 text-gray-200 placeholder-gray-500 focus:outline-none focus:border-purple-500 transition"
-                            placeholder="you@example.com"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            className="h-12 rounded-lg bg-[#0f172a]/50 border border-purple-700/20 text-gray-200 placeholder-gray-500 px-4 focus:outline-none focus:border-purple-500 transition"
                         />
-                    </div>
-
-                    <div className="mb-6">
-                        <label htmlFor="message" className="block text-gray-300 font-semibold mb-2">
-                            Message
-                        </label>
                         <textarea
-                            id="message"
                             name="message"
                             rows={5}
-                            value={formData.message}
-                            onChange={handleChange}
+                            placeholder="Your Message..."
                             required
-                            className="w-full p-3 rounded-lg bg-[#0f172a]/50 border border-purple-700/20 text-gray-200 placeholder-gray-500 focus:outline-none focus:border-purple-500 transition"
-                            placeholder="Your message..."
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
+                            className="rounded-lg bg-[#0f172a]/50 border border-purple-700/20 text-gray-200 placeholder-gray-500 p-4 focus:outline-none focus:border-purple-500 transition"
                         ></textarea>
+                        <button
+                            type="submit"
+                            className="w-full py-3 rounded-full font-bold text-white text-lg transition duration-300 transform hover:scale-105"
+                            style={{
+                                // background: "linear-gradient(90deg, #8245ec, #a855f7)",
+                                boxShadow:
+                                    "0 0 2px #8245ec, 0 0 2px #8245ec, 0 0 40px #8245ec",
+                            }}
+                        >
+                            SEND MESSAGE
+                        </button>
                     </div>
-
-                    <button
-                        type="submit"
-                        className="w-full py-3 rounded-full font-bold text-white text-lg transition duration-300 transform hover:scale-105"
-                        style={{
-                            background: "linear-gradient(90deg, #8245ec, #a855f7)",
-                            // boxShadow:
-                            //     "0 0 2px #8245ec, 0 0 2px #8245ec, 0 0 40px #8245ec",
-                        }}
-                    >
-                        SEND MESSAGE
-                    </button>
                 </motion.form>
             </Tilt>
         </section>
     );
 };
 
-export default Contact;
+export default ContactForm;
